@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <div style="width: 15%">
+    <%= image_tag @category.icon, alt: 'icon', class: "img" %>
+    </div>
+    <p><%= @category.name %></p>
+    <p>$<%= @category.total %></p>
+  </div>
+  <div>
+    <h2>Expenditure</h2>
+    <%if @category.expenditures.empty? %>
+      <p>No expenditures recorded yet</p>
+    <% else %>
+      <% @category.expenditures.order(created_at: :desc).each do |exp| %>
+        <div>
+          <p><%= exp.name %></p>
+          <p><%= exp.amount %></p>
+          <%= button_to 'Delete', category_expenditure_path(@category.id, exp.id), method: :delete %>
+        </div>
+      <% end %>
+    <% end %>  
+  </div>
+  <%= link_to 'New Expenditure', new_category_expenditure_path(@category.id) %>
+  
+</div>
