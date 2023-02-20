@@ -22,3 +22,15 @@
   width: 2rem;
   height: 2rem;
 }
+
+.splash {
+  background-color: #3778c2;
+}
+
+.btn {
+  background-color: #5fb523;
+}
+
+.logout {
+  background-color: #a30000;
+}
