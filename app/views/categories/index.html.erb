@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category.id) do %>
+        <div>
+          <div style="width: 15%">
+            <%= image_tag category.icon, alt: 'icon', class: "img" %>
+          </div>
+          <p><%= category.name %></p>
+          <p>$<%= category.total %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to 'Add New Category', new_category_path %>
+</div>

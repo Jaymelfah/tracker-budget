@@ -1,0 +1,13 @@
+<div>
+<%= form_with model: [@category, @expenditure] do |form| %>
+  <div>
+   <%= form.text_field :name, placeholder: 'Name', required: true %>
+  </div>
+   <div>
+   <%= form.number_field :amount, placeholder: 'Amount Spent in $', type: 'float', required: true %>
+  </div>
+  <div>
+    <%= form.submit "Add Expenditure" %>
+  </div>
+<% end %>
+</div>
