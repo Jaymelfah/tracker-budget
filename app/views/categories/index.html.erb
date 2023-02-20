@@ -1,7 +1,7 @@
 <div>
   <div>
     <% @categories.each do |category| %>
-      <%= link_to category_path(category.id) do %>
+      <%= link_to category_path(category.id.to_s) do %>
         <div>
           <div style="width: 15%">
             <%= image_tag category.icon, alt: 'icon', class: "img" %>

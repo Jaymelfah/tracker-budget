@@ -2,7 +2,11 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @categories = Category.all.order(created_at: :desc)
+    @categories = if current_user
+                    Category.where(author: current_user).order(created_at: :desc)
+                  else
+                    Category.all.order(created_at: :desc)
+                  end
   end
 
   def new
