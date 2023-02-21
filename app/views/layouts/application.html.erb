@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <% unless current_page?(root_path) %>
+    <% if user_signed_in? || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
       <%= render partial: 'layouts/nav' %>
     <% end %>
     <p class="notice"><%= notice %></p>
