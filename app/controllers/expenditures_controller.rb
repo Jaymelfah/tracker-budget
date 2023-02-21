@@ -35,6 +35,8 @@ class ExpendituresController < ApplicationController
     redirect_to category_path(@category.id)
   end
 
+  private
+
   def expenditure_params
     params.require(:expenditure).permit(:name, :amount)
   end

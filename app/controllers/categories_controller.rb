@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    flash.now[:show_transactions_title] = true if user_signed_in?
     @categories = if current_user
                     Category.where(author: current_user).order(created_at: :desc)
                   else
@@ -35,6 +36,8 @@ class CategoriesController < ApplicationController
     flash[:notice] = 'The category was successfully deleted'
     redirect_to categories_path
   end
+
+  private
 
   def category_params
     params.require(:category).permit(:icon, :name)
