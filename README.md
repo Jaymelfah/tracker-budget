@@ -49,8 +49,11 @@
 ![Preview](./app/assets/images/erd_diagram.png)
 
 
+
+
 ### Live Demo
-This is a [live]() demo of the mobile app
+This is a [live](https://budget-application-39ba.onrender.com) demo of the mobile app
+
 
 ### Video Demo
 This is a [video](https://www.loom.com/share/c66bc3e6c1964074b02a8e47135ff502) demonstration of the app
