@@ -4,5 +4,5 @@ class Expenditure < ApplicationRecord
   has_many :categories, through: :category_expenditures, foreign_key: 'expenditure_id'
 
   validates :name, presence: true
-  validates :amount, presence: true
+  validates :amount, presence: true, numericality: { greater_than: 0 }
 end

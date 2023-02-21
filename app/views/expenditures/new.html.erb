@@ -1,13 +1,13 @@
-<div>
+<div class="w-full mt-6">
 <%= form_with model: [@category, @expenditure] do |form| %>
-  <div>
-   <%= form.text_field :name, placeholder: 'Name', required: true %>
+  <div class="bg-white">
+   <%= form.text_field :name, placeholder: 'Name', required: true, class: "w-full" %>
   </div>
-   <div>
-   <%= form.number_field :amount, placeholder: 'Amount Spent in $', type: 'float', required: true %>
+   <div class="bg-white mt-2">
+   <%= form.number_field :amount, placeholder: 'Amount Spent($)', type: 'float', required: true, class: "w-full p-4" %>
   </div>
-  <div>
-    <%= form.submit "Add Expenditure" %>
+  <div class="flex flex-col items-center mt-6">
+    <%= form.submit "Add Expenditure", class: "btn p-4 rounded-lg text-white" %>
   </div>
 <% end %>
 </div>
