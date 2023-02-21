@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Expenditure, type: :request do
   include Devise::Test::IntegrationHelpers
   before :each do
-    @user = User.create(name: 'Antonio', email: 'antonio@gmail.com', password: '123456', password_confirmation: '123456')
+    @user = User.create(name: 'Antonio', email: 'antonio@gmail.com', password: '123456',
+                        password_confirmation: '123456')
     @expenditure = Expenditure.create(name: 'Costumes', amount: 40, author_id: @user.id)
     @category = Category.create(name: 'Groceries', icon: 'shopping-bag.png', author_id: @user.id)
     @category_expenditure = CategoryExpenditure.create(category_id: @category.id, expenditure_id: @expenditure.id)
