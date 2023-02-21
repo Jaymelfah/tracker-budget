@@ -1,4 +1,4 @@
-<nav class="splash w-full flex gap-12 text-white p-6 text-xl">
+<nav class="splash w-full flex gap-12 text-white p-6 text-xl navbar">
   <p><%= link_to '<i class="fa-solid fa-bars"></i>'.html_safe, unauthenticated_root_path %></p>
   <p><%= render partial: 'layouts/title' %></p>
   <% if user_signed_in? %>
